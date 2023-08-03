@@ -1,0 +1,15 @@
+[package]
+name = "repo-sync"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap ={ version = "4.3.19", features = ["derive"] }
+env_logger = "0.10.0"
+#git2 = "0.17.2"
+log = "0.4.19"
+notify = "6.0.1"
+serde = {version = "1.0", features = ["derive" ]}
+tokio = { version = "1.29", features = ["sync", "time"] }
+toml = "0.7.6"
+directories = "5.0"
