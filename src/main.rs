@@ -37,6 +37,9 @@ fn main() {
     });
 
     while let Some(event) = rx.blocking_recv() {
+
+        // if modif -> lancer un tache qui sleep pendant x second en envoi Push a la fin
+        // si modif pendant que cette meme tache est en cours, relancer cette tache
         dbg!(event);
     }
 }
@@ -45,6 +48,7 @@ fn main() {
 enum CustomEvent {
     Modif,
     Pull,
+    Push
 }
 
 fn map_notify_event(event: Event) -> Option<CustomEvent> {
